@@ -158,6 +158,12 @@ body {
   font-family: "Noto Sans Georgian", sans-serif;
 }
 
+body header .Header-Container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 body header .Header-Container .header-content {
   display: flex;
   justify-content: center;
@@ -166,24 +172,19 @@ body header .Header-Container .header-content {
   width: 100%;
 }
 
-body {
-  background-color: black;
+body header .undeline {
+  max-width: 1110px;
+  width: 100%;
 }
+
 body header .Header-Container {
   max-width: 1440px;
   height: 100px;
   margin: 0 auto;
   background-color: black;
-  display: flex;
-  justify-content: center;
 }
 body header .Header-Container .header-content {
-  max-width: 1110px;
-  width: 100%;
-  background-color: url(black);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  background-color: black;
 }
 body header ul {
   display: flex;
@@ -192,11 +193,9 @@ body header ul li {
   padding-right: 50px;
 }
 body header ul li a {
-  color: white;
+  color: #ffffff;
 }
 body header .undeline {
-  max-width: 1110px;
-  width: 100%;
   margin: 0 auto;
   background-color: #979797;
   height: 1px;
@@ -209,7 +208,7 @@ body header .undeline {
   align-items: center;
   padding-left: 140px;
   margin: 0 auto;
-  color: white;
+  color: #ffffff;
 }
 .Content-Container .Info {
   width: 398px;
@@ -242,5 +241,5 @@ body header .undeline {
   background-color: #d87d4a;
 }
 .Content-Container .Info button a {
-  color: white;
+  color: #ffffff;
 }/*# sourceMappingURL=global.css.map */

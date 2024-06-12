@@ -1,22 +1,16 @@
 body {
-  background-color: $secondary-bg-color;
   header {
     .Header-Container {
       max-width: 1440px;
       height: 100px;
       margin: 0 auto;
       background-color: $secondary-bg-color;
-      display: flex;
-      justify-content: center;
+      @extend %flex;
 
       .header-content {
         @extend %containerWidth;
-        max-width: 1110px;
-        width: 100%;
-        background-color: url($secondary-bg-color);
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+        background-color:$secondary-bg-color;
+        
       }
     }
     ul {
@@ -30,8 +24,7 @@ body {
     }
 
     .undeline {
-      max-width: 1110px;
-      width: 100%;
+     @extend %maxWidth;
       margin: 0 auto;
       background-color: #979797;
       height: 1px;

@@ -1,0 +1,8 @@
+.Product-Container{
+    @extend %containerWidth;
+     
+    .Product-Container{
+        background-color: aliceblue;
+    }
+
+}
