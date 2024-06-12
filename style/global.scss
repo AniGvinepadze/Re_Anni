@@ -1,6 +1,11 @@
 @import "./utils/reset";
+@import "./utils/variables";
 @import "./utils/font";
-@import"./utils/variables";
-@import"./utils/extend";
+@import "./utils/mixin";
+@import "./utils/extend";
 @import "./components/header";
 @import "./components/main";
+@import "./components/bestsellers";
+@import "./components/client";
+@import"./components/happycustomers";
+@import "./components/footer";

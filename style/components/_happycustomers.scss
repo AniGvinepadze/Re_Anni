@@ -1,0 +1,58 @@
+.Our-Happy-Customers-Container {
+  margin: 100px auto 0px;
+
+  .Happy-Customers-Title {
+    @include containerWidth(1110px);
+    span {
+      font-size: 48px;
+      font-weight: 700;
+      padding-right: 400px;
+    }
+    .svgs {
+      &:hover {
+        .first {
+          path {
+            fill: $main-hover-color;
+            transition: 200ms;
+          }
+        }
+        .second {
+          path {
+            fill: $main-hover-color;
+            transition: 200ms;
+          }
+        }
+      }
+    }
+  }
+  .Our-Happy-Customers-Content {
+@include containerWidth(1110px);
+margin: 53px auto 100px ;
+
+    .staricons {
+      img {
+        height: 22px;
+      }
+    }
+    .name {
+      padding: 15px 0px 12px 0px;
+      @include SizesWeightsLines(20px, 700, 10px);
+      img {
+        height: 24px;
+      }
+    }
+    .info {
+      @include customerBorderInfo(16px);
+    }
+  }
+  .Customer-One {
+    @include customerBorder(358px);
+  }
+  .Customer-Two {
+    @include customerBorder(358px);
+    margin: 0px 20px 0px 20px;
+  }
+  .Customer-Three {
+    @include customerBorder(358px);
+  }
+}

@@ -1,8 +1,133 @@
-.Product-Container{
+body {
+  .Product-Container {
     @extend %containerWidth;
-     
-    .Product-Container{
-        background-color: aliceblue;
-    }
+    margin: 120px auto 0;
 
+    .product-content {
+
+   
+      @extend %containerWidth;
+
+      justify-content: space-between;
+
+      .headphone {
+        width: 350px;
+        background-color: $bestseller-bg-color;
+        text-align: center;
+        border-radius: 15px;
+
+        img {
+          @extend %bestsellerImgSIze;
+          position: relative;
+          top: -40px;
+        }
+        p {
+          @extend %flex;
+
+          font-size: 18px;
+          font-weight: 700;
+          letter-spacing: 1.2;
+          padding-bottom: 20px;
+        }
+        .shop {
+          font-size: 13px;
+          font-weight: 600;
+          letter-spacing: 1px;
+
+          &:hover {
+            a {
+              color: $main-hover-color;
+            }
+          }
+          a {
+            color: #727171;
+          }
+          span {
+            color: #d87d4a;
+            font-size: 13px;
+            font-weight: 700;
+          }
+        }
+      }
+      .speaker {
+        width: 350px;
+        background-color: $bestseller-bg-color;
+        border-radius: 15px;
+
+        img {
+          @extend %bestsellerImgSIze;
+          position: relative;
+          top: -40px;
+          left: 100px;
+        }
+        p {
+          @extend %flex;
+
+          font-size: 18px;
+          font-weight: 700;
+          letter-spacing: 1.2;
+          padding-bottom: 20px;
+        }
+
+        .shop {
+          font-size: 13px;
+          font-weight: 600;
+          letter-spacing: 1px;
+
+          &:hover {
+            a {
+              color: $main-hover-color;
+            }
+          }
+          a {
+            color: #727171;
+          }
+          span {
+            color: #d87d4a;
+            font-size: 13px;
+            font-weight: 700;
+          }
+        }
+      }
+      .earphones {
+        width: 350px;
+        border-radius: 15px;
+        background-color: $bestseller-bg-color;
+
+        img {
+          @extend %bestsellerImgSIze;
+          position: relative;
+          top: -40px;
+          left: 100px;
+        }
+        p {
+          @extend %flex;
+
+          font-size: 18px;
+          font-weight: 700;
+          letter-spacing: 1.2;
+          padding-bottom: 20px;
+        }
+        .shop {
+          font-size: 13px;
+          font-weight: 600;
+          letter-spacing: 1px;
+
+          &:hover {
+            a {
+              color: $main-hover-color;
+            }
+          }
+          a {
+            color: #727171;
+          }
+          span {
+            color: #d87d4a;
+            font-size: 13px;
+            font-weight: 700;
+          }
+        }
+      }
+    }
+  }
 }

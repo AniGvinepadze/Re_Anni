@@ -1,3 +1,96 @@
-body{
-    background-color: black;
+// .Footer-Container {
+//   height: 365px;
+//   background-color: $secondary-bg-color;
+
+//   .Footer-personal-info {
+//     width: 500px;
+
+//     // .logo {
+//     //   .logoImg {
+
+//     //   }
+//     // }
+//     p {
+//       font-size: 15px;
+//       font-weight: 400;
+//       padding: 36px 0px 56px 0px  ;
+//       color: $bestseller-bg-color;
+//     }
+//     span {
+//       font-size: 15px;
+//       font-weight: 700;
+//       color: $bestseller-bg-color;
+//     }
+//   }
+// }
+
+.Footer-Container {
+  @extend %flex;
+  height: 365px;
+  background-color: $secondary-bg-color;
+
+  .Footer-Navigation {
+    @include containerWidth(1110px);
+    justify-content: space-around;
+    &:hover {
+      .logo {
+        path {
+          fill: $main-hover-color;
+          transition: 400ms;
+        }
+      }
+    }
+    .logo {
+      padding-right: 100px;
+      cursor: pointer;
+    }
+    nav {
+      padding-left: 200px;
+      ul {
+        display: flex;
+        *:not(:lastchild) {
+          padding-right: 50px;
+        }
+        li {
+          padding-right: 50px;
+          &:hover {
+            a {
+              color: $main-hover-color;
+            }
+          }
+          a {
+            color: $main-background-color;
+          }
+        }
+      }
+    }
+  }
+  .Footer-personal-info {
+    width: 365px;
+    p {
+      font-size: 15px;
+      font-weight: 400;
+      padding: 36px 0px 56px 0px;
+      color: $footer-text-color;
+    }
+    span {
+      font-size: 15px;
+      font-weight: 700;
+      color: $footer-text-color;
+    }
+  }
+  .Social-Adress-Container {
+    &:hover {
+      svg {
+        color: $main-hover-color;
+      }
+    }
+    svg {
+      &:not(:last-child) {
+        margin-right: 30px;
+      }
+      margin-right: 30px;
+      cursor: pointer;
+    }
+  }
 }

@@ -1,45 +1,54 @@
 .Content-Container {
-    max-width: 1440px;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    padding-left: 140px;
-    margin: 0 auto;
-    color:$main-background-color;
+  @include responsive(tablet){
+    max-width: 700px
+  }
+  @include containerWidth(1440px);
+  padding-left: 140px;
+  color: $main-background-color;
+  background-color: $secondary-bg-color;
 
-    .Info {
-      width: 398px;
+  .Info {
+    width: 398px;
 
-      .newproduct {
-        font-size: 14px;
-        font-weight: 300;
-        letter-spacing: 10px;
-        color: rgb(120, 120, 120);
-        padding-bottom: 24px;
+    .newproduct {
+      @include responsive(tablet){
+        @extend %flex;
+        position: relative;
+        z-index: 1;
       }
-      h2 {
-        font-size: 56px;
-        font-weight: 500;
-        letter-spacing: 2px;
-      }
-      p {
-        font-size: 15px;
-        font-weight: 300;
-        color: #8d8888;
-        padding: 24px 0px 40px 0px;
-      }
-      button {
-        width: 160px;
-        height: 48px;
-        font-size: 13px;
-        font-weight: 500;
-        letter-spacing: 1px;
-        border: 1px solid $secondary-bg-color;
-        background-color: #d87d4a;
+      flex: 1;
+      font-size: 14px;
+      font-weight: 300;
+      letter-spacing: 10px;
+      color: rgb(120, 120, 120);
+      padding-bottom: 24px;
+    }
+    h2 {
+      font-size: 56px;
+      font-weight: 500;
+      letter-spacing: 2px;
+    }
+    p {
+      font-size: 15px;
+      font-weight: 300;
+      color: #8d8888;
+      padding: 24px 0px 40px 0px;
+    }
+    button {
+      width: 160px;
+      height: 48px;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 1px;
+      border: 1px solid $secondary-bg-color;
+      background-color: #d87d4a;
 
-        a {
-            color: $main-background-color;
-        }
+      a {
+        color: $main-background-color;
       }
     }
+  }
+  .Headphones-img {
+    flex: 1;
+  }
 }
