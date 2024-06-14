@@ -71,4 +71,15 @@ $pc-max: $pc - 1;
   font-weight: $weight;
   line-height: $line;
 }
+@mixin TimerBoxSize{
+  width: 252px;
+  height: 199px;
+  background-color: $secondary-bg-color;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 22px
+}
 

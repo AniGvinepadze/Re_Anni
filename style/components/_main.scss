@@ -1,18 +1,22 @@
+.Main-Content-Container{
+  max-width: 1440px;
+  width: 100%;
+  background-color: $secondary-bg-color;
 .Content-Container {
   @include responsive(tablet){
     max-width: 700px
   }
-  @include containerWidth(1440px);
+  @include containerWidth(1110px);
   padding-left: 140px;
   color: $main-background-color;
-  background-color: $secondary-bg-color;
-
   .Info {
     width: 398px;
 
     .newproduct {
       @include responsive(tablet){
-        @extend %flex;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         position: relative;
         z-index: 1;
       }
@@ -29,6 +33,7 @@
       letter-spacing: 2px;
     }
     p {
+      width: 300px;
       font-size: 15px;
       font-weight: 300;
       color: #8d8888;
@@ -51,4 +56,5 @@
   .Headphones-img {
     flex: 1;
   }
+}
 }

@@ -12,7 +12,7 @@ body {
       background-color: $secondary-bg-color;
 
       .header-content {
-        // @extend %containerWidth;
+        @extend %containerWidth;
         background-color: $secondary-bg-color;
         display: flex;
         justify-content: space-between;
@@ -122,7 +122,7 @@ body {
     }
 
     .undeline {
-      // @extend %maxWidth;
+      @extend %maxWidth;
       margin: 0 auto;
       background-color: #979797;
       height: 1px;

@@ -1,0 +1,38 @@
+.Timer-Container {
+  @extend %maxWidth;
+  margin: 0 auto;
+
+  .Timer-Container-Title {
+    @extend %maxWidth;
+
+    span {
+      @include SizesWeightsLines(48px, 900, 65px);
+    }
+  }
+
+  .Timer-Content {
+   @include containerWidth(1110px);
+   justify-content: space-between;
+   margin: 50px 0px 100px;
+
+   .Timer-Content-Days{
+    @include TimerBoxSize;
+   }
+   .Timer-Content-Hours{
+    @include TimerBoxSize;
+   }
+    .Timer-Content-Minutes{
+    @include TimerBoxSize;
+   }
+    .Timer-Content-Seconds{
+    @include TimerBoxSize;
+   }
+   p{
+    @include SizesWeightsLines(64px,900,1px);
+   }
+   span{
+    padding-top: 50px;
+   }
+  }
+  
+}

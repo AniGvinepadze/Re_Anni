@@ -2,7 +2,9 @@
   margin: 100px auto 0px;
 
   .Happy-Customers-Title {
-    @include containerWidth(1110px);
+    @extend %maxWidth;
+    display: flex;
+    margin: 0 auto;
     span {
       font-size: 48px;
       font-weight: 700;
@@ -26,8 +28,8 @@
     }
   }
   .Our-Happy-Customers-Content {
-@include containerWidth(1110px);
-margin: 53px auto 100px ;
+    @include containerWidth(1110px);
+    margin: 53px auto 100px;
 
     .staricons {
       img {
