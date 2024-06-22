@@ -1,12 +1,7 @@
 body {
   header {
-    @include responsive(tablet) {
-    }
     background-color: black;
     .Header-Container {
-      @include responsive(tablet) {
-        max-width: 700px;
-      }
       @include containerWidth(1440px);
       height: 100px;
       background-color: $secondary-bg-color;
@@ -18,6 +13,62 @@ body {
         justify-content: space-between;
       }
     }
+    .menu{
+      position: fixed;
+      top: 0;
+      left: -400px;
+      width: 300px;
+      height: 100vh;
+      background-color: rgb(72, 72, 72);
+      color: white;
+      padding: 30px;
+      box-sizing: border-box;
+      transition: left 0.3 ease;
+      z-index: 2;
+
+      .menu{
+        &.active{
+          position: fixed;
+          top: 0;
+          left: -400px;
+          width: 300px;
+          height: 100vh;
+          background-color: rgb(72, 72, 72);
+          color: white;
+          padding: 30px;
+          box-sizing: border-box;
+          transition: left 0.3 ease;
+          z-index: 2;
+        }
+      }
+      .burger{
+        position: fixed;
+        top: 10px;
+        right: 10px;
+        cursor: pointer;
+        background-color: black;
+        z-index: 2;
+      }
+    }
+    .menubtn {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 35px;
+      height: 35px;
+      cursor: pointer;
+      transition: all 0.5s ease-in-out;
+    }
+
+    .menuburger {
+      width: 20px;
+      height: 4px;
+      background-color: white;
+      border-radius: 5px;
+      transition: all 0.5s ease-in-out;
+    }
+
     &::before {
       .menuburger {
         content: "";
@@ -39,36 +90,37 @@ body {
         border-radius: 5px;
         transition: all 0.5s ease-in-out;
       }
-      &::before {
-        .menuburger {
-          transform: translateY(-16px);
-        }
+    }
+    &::before {
+      .menuburger {
+        transform: translateY(-16px);
       }
-      &::after {
-        .menuburger {
-          transform: translateY(-16px);
+    }
+    &::after {
+      .menuburger {
+        transform: translateY(16px);
+      }
+    }
+
+    .menubtn {
+      &.open {
+        .menuburger{
+        transform: translateX(-50px);
+        background: transparent;
         }
       }
     }
 
     .menubtn {
-      position: relative;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 35px;
-      height: 35px;
-      cursor: pointer;
-      transition: all 0.5s ease-in-out;
-
-      .menuburger {
-        width: 20px;
-        height: 4px;
-        background-color: white;
-        border-radius: 5px;
-        transition: all 0.5s ease-in-out;
+      &.open {
+        .menuburger {
+          &::before {
+            transform: rotate(45deg) translate(35px, -35px);
+          }
+        }
       }
     }
+
     .logo {
       &:hover {
         .logoImg {
@@ -86,9 +138,6 @@ body {
       }
 
       nav {
-        @include responsive(tablet) {
-          flex-direction: column;
-        }
         ul {
           display: flex;
           *:not(:lastchild) {
@@ -128,4 +177,23 @@ body {
       height: 1px;
     }
   }
+  .mainoverlay{
+    position: fixed;
+    display: none;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+  }
+  .mainoverlay{
+    &.active{
+      display: block;
+    }
+  }
+  .noScroll{
+overflow: hidden;
+  }
 }
+

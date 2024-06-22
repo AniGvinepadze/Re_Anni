@@ -1,0 +1,98 @@
+.SoloProduct-Header-Container {
+  @extend %maxWidth;
+  margin: 0 auto;
+  background-color: $secondary-bg-color;
+  height: 100px;
+
+  .SoloProduct-Header-Navigation {
+    @include containerWidth(1110px);
+
+    background-color: $secondary-bg-color;
+    display: flex;
+    justify-content: space-between;
+
+    .SoloProduc-Logo {
+      &:hover {
+        .SoloLogoImg {
+          path {
+            fill: $main-hover-color;
+            transition: 400ms;
+          }
+        }
+      }
+      padding: 20px;
+    }
+    .SoloProduct-Navigation {
+      nav {
+        ul {
+          display: flex;
+          *:not(:lastchild) {
+            margin-right: 50px;
+          }
+
+          li {
+            &:hover {
+              a {
+                color: $main-hover-color;
+              }
+            }
+            padding-right: 50px;
+            a {
+              color: $main-background-color;
+            }
+          }
+        }
+      }
+    }
+    .SoloProduct-Cart {
+      &:hover {
+        .CartImg {
+          path {
+            fill: $main-hover-color;
+            transition: 400ms;
+          }
+        }
+      }
+      padding: 30px;
+    }
+  }
+}
+.SoloProduct-Main-Container {
+  @include containerWidth(1110px);
+
+  .SoloProduct-Container {
+    @include containerWidth(1110px);
+    margin: 200px;
+    .SoloProduct-Info {
+      width: 445px;
+      .SoloProduct-Name {
+        @include SizesWeightsLines(40px, 700, 27px);
+      }
+      .SoloProduct-Type {
+        @include SizesWeightsLines(40px, 700, 50px);
+        letter-spacing: 2px;
+      }
+      .SoloProduct-Description {
+        @include SizesWeightsLines(15px, 500, 10px);
+        color: rgb(122, 120, 120);
+      }
+      .SoloContainer-Price {
+        @include SizesWeightsLines(18px, 700, 10px);
+      }
+    }
+  }
+}
+
+.SoloProduct-Features-Container {
+  @extend %maxWidth;
+  margin: 0 auto;
+
+  .SoloProduct-Features-Title {
+    @include SizesWeightsLines(32px, 700, 3px);
+    padding-bottom: 60px;
+  }
+  .SoloProduct-Features {
+    @include SizesWeightsLines(15px, 400, 20px);
+    width: 635px;
+  }
+}

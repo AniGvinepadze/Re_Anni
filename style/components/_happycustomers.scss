@@ -2,6 +2,13 @@
   margin: 100px auto 0px;
 
   .Happy-Customers-Title {
+    @include responsive(tablet) {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
     @extend %maxWidth;
     display: flex;
     margin: 0 auto;
