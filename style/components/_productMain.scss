@@ -1,14 +1,34 @@
 .Main-Product-Container-two {
   @extend %maxWidth;
   margin: 0 auto;
+ 
+
   .Product-Container {
-    &:not(:last-child){
-      .Container{
-        flex-direction: row-reverse !important;
-      }
+    @media screen and (max-width: 1110px) {
+      display: flex;
+      justify-content: center;
+      text-align: center;
+      align-items: center;
+      flex-direction: column;
+      flex-direction: column-reverse;
+      
+   
     }
+    // &:not(:last-child){
+    //   .Container{
+    //     flex-direction: row-reverse !important;
+    //   }
+    // }
   }
   .Container {
+    @media screen and (max-width:1110px){
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+     
+     }
+    
     // @include containerWidth(1110px);
     width: 100%;
     max-width: 1110px;

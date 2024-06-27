@@ -2,126 +2,31 @@ body {
   header {
     background-color: black;
     .Header-Container {
-      @include containerWidth(1440px);
+      @include containerWidth(1110px);
       height: 100px;
       background-color: $secondary-bg-color;
 
       .header-content {
+        @media screen and (max-width:1110px) {
+          padding: 0px 50px;
+        }
         @extend %containerWidth;
         background-color: $secondary-bg-color;
         display: flex;
         justify-content: space-between;
       }
-    }
-    .menu{
-      position: fixed;
-      top: 0;
-      left: -400px;
-      width: 300px;
-      height: 100vh;
-      background-color: rgb(72, 72, 72);
-      color: white;
-      padding: 30px;
-      box-sizing: border-box;
-      transition: left 0.3 ease;
-      z-index: 2;
 
-      .menu{
-        &.active{
-          position: fixed;
-          top: 0;
-          left: -400px;
-          width: 300px;
-          height: 100vh;
-          background-color: rgb(72, 72, 72);
-          color: white;
-          padding: 30px;
-          box-sizing: border-box;
-          transition: left 0.3 ease;
-          z-index: 2;
-        }
-      }
-      .burger{
-        position: fixed;
-        top: 10px;
-        right: 10px;
-        cursor: pointer;
-        background-color: black;
-        z-index: 2;
-      }
-    }
-    .menubtn {
-      position: relative;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 35px;
-      height: 35px;
-      cursor: pointer;
-      transition: all 0.5s ease-in-out;
-    }
-
-    .menuburger {
-      width: 20px;
-      height: 4px;
-      background-color: white;
-      border-radius: 5px;
-      transition: all 0.5s ease-in-out;
-    }
-
-    &::before {
-      .menuburger {
-        content: "";
-        position: absolute;
-        width: 35px;
-        height: 4px;
-        background-color: white;
-        border-radius: 5px;
-        transition: all 0.5s ease-in-out;
-      }
-    }
-    &::after {
-      .menuburger {
-        content: "";
-        position: absolute;
-        width: 35px;
-        height: 4px;
-        background-color: white;
-        border-radius: 5px;
-        transition: all 0.5s ease-in-out;
-      }
-    }
-    &::before {
-      .menuburger {
-        transform: translateY(-16px);
-      }
-    }
-    &::after {
-      .menuburger {
-        transform: translateY(16px);
-      }
-    }
-
-    .menubtn {
-      &.open {
-        .menuburger{
-        transform: translateX(-50px);
-        background: transparent;
-        }
-      }
-    }
-
-    .menubtn {
-      &.open {
-        .menuburger {
-          &::before {
-            transform: rotate(45deg) translate(35px, -35px);
-          }
-        }
-      }
-    }
+ 
+   
 
     .logo {
+      
+      @media screen and (max-width:1110px) {
+        padding-right: 150px ;
+      }
+      @media screen and (max-width:700px) {
+        padding-right: 50px ;
+      }
       &:hover {
         .logoImg {
           path {
@@ -133,12 +38,20 @@ body {
       padding: 20px;
     }
     .navigation {
-      @include responsive(tablet) {
-        display: none;
+      @media screen and (max-width:1110px) {
+        padding-right: 150px ;
+      }
+      @media screen and (max-width:700px) {
+        padding-right: 50px ;
+        
       }
 
       nav {
         ul {
+          @media screen and (max-width:1110px) {
+            display: none;
+          }
+
           display: flex;
           *:not(:lastchild) {
             margin-right: 50px;
@@ -159,6 +72,14 @@ body {
       }
     }
     .cart {
+
+      @media screen and (max-width:1110px) {
+        padding-right: 100px ;
+      }
+      
+      @media screen and (max-width:700px) {
+        padding-right: 50px ;
+      }
       &:hover {
         .cartImg {
           path {
@@ -170,30 +91,30 @@ body {
       padding: 30px;
     }
 
-    .undeline {
-      @extend %maxWidth;
-      margin: 0 auto;
-      background-color: #979797;
-      height: 1px;
+    .mainoverlay{
+      position: fixed;
+      display: none;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 1;
+    }
+    .mainoverlay{
+      &.active{
+        display: block;
+      }
+    }
+    .noScroll{
+      overflow: hidden;
     }
   }
-  .mainoverlay{
-    position: fixed;
-    display: none;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 1;
-  }
-  .mainoverlay{
-    &.active{
-      display: block;
-    }
-  }
-  .noScroll{
-overflow: hidden;
+  .undeline {
+    @extend %maxWidth;
+    margin: 0 auto;
+    background-color: #979797;
+    height: 1px;
   }
 }
-
+}

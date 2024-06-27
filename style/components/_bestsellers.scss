@@ -4,19 +4,31 @@ body {
     margin: 120px auto 0;
 
     .product-content {
-     
-   
+    
+      @media screen and (max-width: 700px) {
+        flex-direction: column;
+      }
+
       @extend %containerWidth;
 
       justify-content: space-between;
 
       .headphone {
+        @media screen and (max-width: 1110px) {
+          width: 280px ;
+        }
         width: 350px;
         background-color: $bestseller-bg-color;
         text-align: center;
         border-radius: 15px;
 
         img {
+          @media screen and (max-width: 1110px) {
+            position: relative;
+            left: 0px;
+          }
+ 
+      
           @extend %bestsellerImgSIze;
           position: relative;
           top: -40px;
@@ -49,13 +61,20 @@ body {
           }
         }
       }
-      .speaker {
-    
+      .speaker {   
+           @media screen and (max-width: 1110px) {
+        width: 280px ;
+      }
         width: 350px;
         background-color: $bestseller-bg-color;
         border-radius: 15px;
 
-        img {
+        img{
+          @media screen and (max-width: 1110px) {
+            position: relative;
+            left: 75px;
+          }
+ 
           @extend %bestsellerImgSIze;
           position: relative;
           top: -40px;
@@ -91,11 +110,19 @@ body {
         }
       }
       .earphones {
+        @media screen and (max-width: 1110px) {
+          width: 280px ;
+        }
         width: 350px;
         border-radius: 15px;
         background-color: $bestseller-bg-color;
 
         img {
+          @media screen and (max-width: 1110px) {
+            position: relative;
+            left: 65px;
+          }
+ 
           @extend %bestsellerImgSIze;
           position: relative;
           top: -40px;

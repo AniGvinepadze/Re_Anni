@@ -2,17 +2,21 @@
   margin: 100px auto 0px;
 
   .Happy-Customers-Title {
-    @include responsive(tablet) {
+ 
+
+    @media screen and (max-width:1110px) {
       display: flex;
       justify-content: center;
       align-items: center;
       flex-direction: column;
     }
-
     @extend %maxWidth;
     display: flex;
     margin: 0 auto;
     span {
+      @media screen and (max-width:1110px) {
+       padding: 0px 0px 60px 0px; 
+      }
       font-size: 48px;
       font-weight: 700;
       padding-right: 400px;
@@ -35,6 +39,9 @@
     }
   }
   .Our-Happy-Customers-Content {
+    @media screen and (max-width:700px) {
+     flex-direction: column;
+    }
     @include containerWidth(1110px);
     margin: 53px auto 100px;
 
@@ -53,15 +60,18 @@
     .info {
       @include customerBorderInfo(16px);
     }
-  }
-  .Customer-One {
-    @include customerBorder(358px);
-  }
-  .Customer-Two {
-    @include customerBorder(358px);
-    margin: 0px 20px 0px 20px;
-  }
-  .Customer-Three {
-    @include customerBorder(358px);
-  }
+    .Customer-One {
+      @include customerBorder(358px);
+    }
+    .Customer-Two {
+      @media screen and (max-width:700px) {
+        margin: 30px 0px 30px 0px;
+       }
+      @include customerBorder(358px);
+      margin: 0px 20px 0px 20px;
+    }
+    .Customer-Three {
+      @include customerBorder(358px);
+    }
+    }
 }

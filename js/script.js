@@ -1,5 +1,45 @@
 AOS.init({ delay: 100, duration: 500 });
 
+//!swiper
+
+// const swiper = new Swiper(".swiper", {
+
+//   loop: true,
+
+//   pagination: {
+//     el: ".swiper-pagination",
+//   },
+
+//   navigation: {
+//     nextEl: ".swiper-button-next",
+//     prevEl: ".swiper-button-prev",
+//   },
+
+//   scrollbar: {
+//     el: ".swiper-scrollbar",
+//   },
+// });
+// const swiper2 = new Swiper(".swiper", {
+
+//   slidesPerView: 1,
+//   spaceBetween: 10,
+
+//   breakpoints: {
+
+//     583: {
+//       slidesPerView: 2,
+//     },
+
+//     863: {
+//       slidesPerView: 3,
+//     },
+
+//     1440: {
+//       slidesPerView: 4,
+//     },
+//   },
+// });
+
 //!Timer Section
 
 //ვიძახებ დივებს
@@ -76,82 +116,79 @@ overlay.addEventListener("click", function () {
 
 //!
 
+// let cartIcon = document.querySelector(".cart");
 
-// const firstProductContainer = document.getElementById("First-Product-Container");
-// const prevBtn = document.getElementById("Previous-Btn");
-// const nextBtn = document.getElementById("Next-Btn");
+// cartIcon.addEventListener("click", function () {
+//   const popup = document.querySelector(".popup");
+//   popup.classList.toggle("show");
+//   updateCartPopup();
+// });
 
-// let currentPage = 1;
-// let limit = 2;
-// let products = [];
-
-// fetch("js/data.js")
+// fetch("solodata.json")
 //   .then((response) => response.json())
-//   .then((data) => {
-//     products = data;
-//     showProducts();
-//   });
+//   .then((products) => {
+//     const productContainer = document.getElementById("SoloProduct-Container");
 
-// function showProducts() {
-//   firstProductContainer.innerHTML = "";
+//     const quantityControls = document.createElement("div");
+//     quantityControls.className = "quantitycontrols";
 
-//   const start = (currentPage - 1) * limit;
-//   const end = start + limit;
-//   const productShowing = products.slice(start, end);
+//     const minusBtn = document.createElement("button");
+//     minusBtn.className = "minusBtn";
+//     minusBtn.textContent = "-";
 
-//   productShowing.forEach((product) => {
-
-//     const productContent = document.createElement("div");
-//     productContent.classList.add("product-content");
-
-//     const imgContainer = document.createElement("div");
-//     imgContainer.classList.add("product-img");
-//     const productImg = document.createElement("img");
-//     productImg.src = product.img;
-//     imgContainer.appendChild(productImg);
-//     productContent.appendChild(imgContainer);
-
-//     const contentContainer = document.createElement("div");
-//     contentContainer.classList.add("product-details");
-
-//     const newProduct = document.createElement("p");
-//     newProduct.textContent = products.type;
-//     contentContainer.appendChild(newProduct);
-
-//     const productName = document.createElement("h2");
-//     productName.textContent = products.name;
-//     contentContainer.appendChild(productName);
-
-//     const productDescription = document.createElement("span");
-//     productDescription.textContent = products.description;
-//     contentContainer.appendChild(productDescription);
-
-//     const productBtn = document.createElement("button");
-//     productBtn.textContent = "SEE PRODUCT";
-//     productBtn.addEventListener("click", function() {
-//       viewMore(product.id);
+//     minusBtn.addEventListener("click", function () {
+//       minusQuantity(product.id);
 //     });
-//     contentContainer.appendChild(productBtn);
 
-//     productContent.appendChild(contentContainer);
-//     firstProductContainer.appendChild(productContent);
+//     quantityControls.appendChild(minusBtn);
+
+//     const quantityInput = document.createElement("input");
+//     quantityInput.type = "number";
+//     quantityInput.id = `quantity-${product.id}`;
+//     quantityInput.value = "1";
+//     quantityInput.min = "1";
+//     quantityControls.appendChild(quantityInput);
+
+//     const plusBtn = document.createElement("button");
+//     plusBtn.textContent = "+";
+
+//     plusBtn.addEventListener("click", function () {
+//       plusQuantity(products.id);
+
+//       quantityControls.appendChild(plusBtn);
+//       quantityControls.appendChild(minusBtn);
+
+//       const btn = document.createElement("button");
+//       btn.textContent = "Add to cart";
+//       btn.addEventListener("click", function () {
+//         const quantity = parseInt(
+//           document.querySelector(`#quantity-${product.id}`).value
+//         );
+//         addCart({ ...product.quantity });
+//       });
+//       productContainer.appendChild(btn);
+//     });
 //   });
+
+// function minusQuantity(productId) {
+//   const quantityInput = document.querySelector(`#quantity-${productId}`);
+//   quantityInput.value = parseInt(quantityInput.value) - 1;
+// }
+// function plusQuantity(productId) {
+//   const quantityInput = document.querySelector(`#quantity-${productId}`);
+//   quantityInput.value = parseInt(quantityInput.value) + 1;
 // }
 
-// function viewMore(productId) {
-//   window.location.href = `product.html?id=${productId}`;
+// function addToCart(product){
+//   let cart = JSON.parse(localStorage.getItem("cart") || [])
+
+//   const existingProductIndex = cart.findIndex ((p)=> p.id === product.id)
+
+//   if((existingProductIndex)=> 0){
+//     cart[existingProductIndex].quantity += product.quantity
+//   }else{
+//     CacheStorage.push(product)
+//   }
+//   localStorage.setItem("cart",JSON.stringify(cart))
+//   updateCartPopup()
 // }
-
-// prevBtn.addEventListener("click", function() {
-//   if (currentPage > 1) {
-//     currentPage--;
-//     showProducts();
-//   }
-// });
-
-// nextBtn.addEventListener("click", function() {
-//   if (currentPage < Math.ceil(products.length / limit)) {
-//     currentPage++;
-//     showProducts();
-//   }
-// });
