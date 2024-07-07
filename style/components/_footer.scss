@@ -10,6 +10,7 @@
     width: 100%;
     height: 650px;
   }
+  width: 100%;
   @extend %flex;
   height: 365px;
   background-color: $secondary-bg-color;
@@ -25,6 +26,7 @@
       flex-direction: column;
     }
 
+    width: 100%;
     .Footer-Navigation {
       @include containerWidth(1110px);
       justify-content: space-around;
@@ -98,7 +100,7 @@
     }
     .Footer-personal-info {
       @media screen and (max-width: 830px) {
-        padding-left: 35px;
+        padding-left: 35px; //
         width: 100%;
       }
       @media screen and (max-width: 700px) {
@@ -108,6 +110,9 @@
         text-align: center;
       }
       width: 365px;
+      // padding: 0px 150px 0px 120px;
+      // margin-left: 17px;
+  
       p {
         font-size: 15px;
         font-weight: 400;

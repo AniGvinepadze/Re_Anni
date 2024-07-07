@@ -1,3 +1,4 @@
+
 AOS.init({ delay: 100, duration: 500 });
 
 //!swiper
@@ -36,6 +37,37 @@ AOS.init({ delay: 100, duration: 500 });
 
 //     1440: {
 //       slidesPerView: 4,
+//     },
+//   },
+// });
+
+
+// const swiper = new Swiper('.swiper', {
+
+//   direction: 'horizontal',
+//   loop: true,
+
+//   pagination: {
+//     el: '.swiper-pagination',
+//   },
+//   navigation: {
+//     nextEl: '.right_arrow',
+//     prevEl: '.left_arrow',
+//   },
+//   scrollbar: {
+//     el: '.swiper-scrollbar',
+//   },
+
+//   breakpoints: {
+//     320: {
+//       slidesPerView: 1,
+//     },
+//     720: {
+//       slidesPerView: 2,
+//     },
+
+//     1100: {
+//       slidesPerView: 3,
 //     },
 //   },
 // });
@@ -92,29 +124,13 @@ setInterval(function () {
 
 //! burger menu
 
-let menuBtn = document.querySelector(".menubtn");
+let menuBtn = document.querySelector(".menu_btn");
 
 menuBtn.addEventListener("click", function () {
   menuBtn.classList.toggle("open");
-});
+})
 
-let burger = document.getElementById("burger");
-let menu = document.getElementById("menu");
-let overlay = document.getElementById("overlay");
-let body = document.body;
 
-burger.addEventListener("click", function () {
-  menu.classList.toggle("active");
-  overlay.classList.toggle("active");
-  body.classList.toggle("noScroll");
-});
-overlay.addEventListener("click", function () {
-  menu.classList.toggle("active");
-  overlay.classList.toggle("active");
-  body.classList.toggle("noScroll");
-});
-
-//!
 
 // let cartIcon = document.querySelector(".cart");
 

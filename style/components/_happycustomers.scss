@@ -1,4 +1,5 @@
 .Our-Happy-Customers-Container {
+  width: 100%;
   margin: 100px auto 0px;
 
   .Happy-Customers-Title {
@@ -39,6 +40,7 @@
     }
   }
   .Our-Happy-Customers-Content {
+    width: 100%;
     @media screen and (max-width:700px) {
      flex-direction: column;
     }

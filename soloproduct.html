@@ -11,7 +11,7 @@
       <div class="SoloProduct-Header-Container">
         <div class="SoloProduct-Header-Navigation">
           <div class="Product-Logo">
-            <a href="">
+            <a href="#">
               <svg
                 class="Solo-LogoImg"
                 width="144"
@@ -30,20 +30,19 @@
             </a>
             <!-- <div class="shopping-Cart">
             </div> -->
-        
           </div>
           <div class="SoloProduct-Navigation">
             <nav>
               <ul>
-                <li><a href="#">HOME</a></li>
-                <li><a href="#">PRODUCTS</a></li>
-                <li><a href="#">FEEDBACK</a></li>
-                <li><a href="#">SALES</a></li>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="products.html">PRODUCTS</a></li>
+                <li><a href="index.html">FEEDBACK</a></li>
+                <li><a href="index.html">SALES</a></li>
               </ul>
             </nav>
           </div>
 
-          <div class="SoloProduct-Cart">
+          <div class="cart">
             <a href="#">
               <svg
                 class="SoloCartImg cart-icon"
@@ -61,19 +60,20 @@
                 />
               </svg>
             </a>
+            <div class="popup">
+              <h1>POP UP</h1>
+              <div class="product_list"></div>
+            </div>
+           
           </div>
-          <div class="popup">
-            <span class="close-Btn">&times;</span>
-            <p>Your items will be displayed here</p>
-          </div>
+          <div class="overlay"></div>
         </div>
       </div>
     </header>
 
     <main id="SoloProduct-Main-Container" class="SoloProduct-Main-Container">
-      <p class="go-back">Go Back</p>
+      <p class="go-back"><a href="products.html">Go Back</a></p>
       <div id="SoloProduct-Container" class="SoloProduct-Container">
-
         <div id="SoloProduct-Main-Img" class="SoloProduct-Main-Img">
           <img id="mainImg" src="" alt="" />
         </div>
@@ -86,6 +86,13 @@
             class="SoloProduct-Description"
           ></span>
           <p id="SoloContainer-Price" class="SoloContainer-Price"></p>
+
+          <div id="AddToCart-Container">
+            <button id="minus-Btn">-</button>
+            <input id="qty" type="text" value="1" min="1" />
+            <button id="plus-Btn">+</button>
+            <button id="AddToCart-Btn">ADD TO CART</button>
+          </div>
         </div>
       </div>
     </main>
@@ -103,7 +110,6 @@
     </div>
 
     <script src="js/solodroduct.js"></script>
-    <script src="js/script.js"></script>
     <script src="js/cart.js"></script>
   </body>
 </html>

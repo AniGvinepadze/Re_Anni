@@ -25,7 +25,11 @@
 
 const urlParams = new URLSearchParams(window.location.search);
 const productId = parseInt(urlParams.get("id"));
-
+const addToCartBtn = document.getElementById("AddToCart-Btn");
+const decBtn = document.getElementById("minus-Btn");
+const incBtn = document.getElementById("plus-Btn");
+const qty = document.getElementById("qty");
+qty.id = `quantity-${productId}`;
 fetch("../solodata.json")
   .then((response) => response.json())
   .then((products) => {
@@ -46,7 +50,7 @@ fetch("../solodata.json")
       soloDescription.textContent = product.description;
 
       const soloPrice = document.getElementById("SoloContainer-Price");
-      soloPrice.textContent = product.price;
+      soloPrice.textContent = `$${product.price}`;
 
       const firstImg = document.querySelector(".one");
       firstImg.src = product.additionalImages[0];
@@ -62,13 +66,49 @@ fetch("../solodata.json")
 
       const soloFeatures = document.getElementById("SoloProduct-Features");
       soloFeatures.textContent = product.features;
+
+      // add to cart
+
+      addToCartBtn.addEventListener("click", () => {
+        const quantity = parseInt(qty.value);
+        addToCart({ ...product, quantity });
+      });
     } else {
-     
     }
   })
   .catch((error) => {
     console.error("Error fetching product data:", error);
   });
+
+function addToCart(product) {
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+  const existingProductIndex = cart.findIndex((p) => p.id === product.id);
+
+  if (existingProductIndex >= 0) {
+    cart[existingProductIndex].quantity += product.quantity;
+  } else {
+    cart.push(product);
+  }
+  localStorage.setItem("cart", JSON.stringify(cart));
+  updateCartPopup();
+}
+
+incBtn.addEventListener("click", () => {
+  plusQuantity();
+});
+decBtn.addEventListener("click", () => {
+  minusQuantity();
+});
+function plusQuantity() {
+  qty.value++;
+}
+
+function minusQuantity() {
+  if (qty.value > 1) {
+    qty.value--;
+  }
+}
 
 // let cartIcon = document.querySelector(".cart");
 

@@ -4,6 +4,7 @@
 @import "./utils/mixin";
 @import "./utils/extend";
 @import "./components/header";
+@import "./components/sideBar";
 @import "./components/main";
 @import "./components/bestsellers";
 @import "./components/client";
@@ -12,4 +13,6 @@
 @import "./components/footer";
 @import "./components/product";
 @import "./components/productMain";
-@import"./components/soloproduct";
+@import "./components/soloproduct";
+@import "./components/cart";
+@import "./components/checkout";
